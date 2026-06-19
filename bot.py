@@ -16,7 +16,7 @@ KEYWORDS = [
 
 @bot.event
 async def on_ready():
-    print(f'✅ Bot is online as {bot.user}')
+    print(f'✅ Bot is online as {bot.user} | Monitoring {len(KEYWORDS)} keywords')
 
 @bot.event
 async def on_message(message):
@@ -25,7 +25,7 @@ async def on_message(message):
 
     # Check if ANY of the keywords are in the message
     message_text = message.content.lower()
-    t]for keyword in KEYWORDS)
+    triggered = any(keyword.lower() in message_text for keyword in KEYWORDS)
 
     if triggered:
         await message.channel.send(
