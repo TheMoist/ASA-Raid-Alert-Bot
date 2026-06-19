@@ -9,9 +9,8 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Add as many keywords/phrases as you want
 KEYWORDS = [
-    "destroyed",
-    "Your tribe killed",
     "destroyed your",
+    "Your tribe killed",
     "Your tribe is now RAID flagged"
 ]
 
@@ -26,7 +25,7 @@ async def on_message(message):
 
     # Check if ANY of the keywords are in the message
     message_text = message.content.lower()
-    triggered = any(keyword.lower() in message_text for keyword in KEYWORDS)
+    t]for keyword in KEYWORDS)
 
     if triggered:
         await message.channel.send(
